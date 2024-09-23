@@ -5,9 +5,9 @@
 Are you ever waiting in a long line with nothing to do? Do you ever need something to do on your phone when you're stopped at a traffic light? Haha, just kidding. Connect four is perfect for a quick game break during any day. You can even play with your friends! This classic game is a game that you can play on a roadtrip, in a restaurant, on vacation, in your own home, and anywhere else you can think of. 
 
 ## Design
+![image](https://github.com/user-attachments/assets/c56b06e0-6c40-42c1-b08e-f7f0f9a51f56)
 
-
-
+![image](https://github.com/user-attachments/assets/71567f23-73f8-4ecf-acb4-7d8f5ffe74d6)
 
 # Key Features
 - Login page for easy access to your account
