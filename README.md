@@ -1,88 +1,48 @@
-# Connect four
+# 5 Strikes and You're Out
 
 ## Elevator Pitch
-
-Are you ever waiting in a long line with nothing to do? Do you ever need something to do on your phone when you're stopped at a traffic light? Haha, just kidding. Connect four is perfect for a quick game break during any day. You can even play with your friends! This classic game is a game that you can play on a roadtrip, in a restaurant, on vacation, in your own home, and anywhere else you can think of. 
+Tired of the usual word-guessing games? **5 Strikes and You're Out** offers a fresh twist! In this single-player game, you guess letters to reveal a hidden word, but you only get five incorrect guesses before you're out. Tally marks appear for each wrong guess—five strikes and the game is over. Track your scores and aim to beat your previous best!
 
 ## Design
-![image](https://github.com/user-attachments/assets/c56b06e0-6c40-42c1-b08e-f7f0f9a51f56)
-
-![image](https://github.com/user-attachments/assets/71567f23-73f8-4ecf-acb4-7d8f5ffe74d6)
-
-# Key Features
-- Login page for easy access to your account
-- Gameplay page
-- Stopwatch to keep track of elapsed time during game
 
 
-# Technologies
-I am going to use the required technologies in the following ways:
-- HTML: Uses correct HTML structure for application. Two HTML pages. One for beginning login screen, and one for actual game play.
-- CSS - Application styling that looks good on different screen sizes, uses good whitespace, color choice and contrast.
-- React - Provides login, gameplay display, and updates game from user input on both ends
-- Service - Backend service with endpoints for:
-    - Login
-    - Retrieving user input on their turn
-    - Update game status
- - DB/Login: Store users in database. Register and login users. Credentials securely stored in database. Can't vote unless authenticated.
- - WebSocket - As each player takes a turn, the game is updated to show the results of the game.
+## Key Features
+- Secure login and high score tracking to challenge yourself and improve over time. 
+- Random word generation from a predefined wordlist stored in the backend.
+- Tally-based visual representation of wrong guesses—out after five strikes.
+- Responsive design for both mobile and desktop devices.
 
-## HTML deliverable
+## Technologies
 
-For this deliverable I built out the structure of my application using HTML.
+### HTML
+- **Structure**: HTML will manage the basic layout of the game, including the word display, input field for guesses, a bank of previously guessed letters, and tally mark section for incorrect guesses.
+- **Pages**: The application will have a login page, game page, a scoreboard page, and an about page. Players can log in, play the game, and view their scores. They will receive one point for each correctly guess word. 
 
-- [x] **HTML pages** - Two HTML page that represent the ability to login and play the game.
-- [x] **Links** - The login page automatically links to the gameplay. 
-- [x] **Text** - Small description of how to play the game
-- [ ] **Images** - No images 
-- [x] **DB/Login** - Input box and submit button for login. 
-- [x] **WebSocket** - The gameplay is updated after each turn.
+### CSS
+- **Styling**: CSS will handle the design and layout of the game, including the buttons, word display, and the tally marks. 
+- **Animations**: CSS will be used to animate tally marks as they are drawn with each incorrect guess, providing visual feedback for the player.
 
-## CSS deliverable
+### JavaScript
+- **Interactivity**: JavaScript will manage the game logic, including checking guesses, revealing letters in the word, and updating the tally marks when incorrect guesses are made.
+- **Word Retrieval**: JavaScript will call a backend service to retrieve a random word from a predefined wordlist.
+- **Score Tracking**: JavaScript will handle score calculation and display the player's score at the end of the game.
 
-For this deliverable I properly styled the application into its final appearance.
+### React
+- **Components**: React will be used to build modular components like the login screen, game interface, and tally mark display.
+- **Routing**: React Router will navigate between the login page, game page, and score page without reloading the browser.
 
-- [x] **Header, footer, and main content body**
-- [x] **Navigation elements** - Not much to navigate
-- [x] **Responsive to window resizing** - App will adapt to screensize
-- [x] **Application elements** - Used good contrast and whitespace
-- [x] **Application text content** - Consistent fonts
-- [ ] **Application images** - Still don't have images
+### Web Service
+- **Backend Services**: The backend will provide services that handle:
+  - `login`: Authenticate users and manage their sessions.
+  - `getWord`: Retrieve a random word from a local wordlist stored on the server.
+  - `saveScore`: Store the player's score in the database at the end of each game.
 
-## React deliverable
+### Authentication
+- **User Login**: Players will need to log in to track their scores and view their game history. The player's profile will be displayed on the game page once logged in.
 
-I will use react
+### Database Data
+- **Persistent Data**: Player scores will be stored in a MongoDB database, allowing them to track their progress and challenge themselves to improve.
+- **User Data**: Secure storage of user credentials and scores, allowing players to view their previous game data.
 
-- [x] **Components** - Login, gameplay
-  - [x] **login** - When you press enter or the login button it takes you to the gameplay page.
-  - [x] **database** - Displays the winning user as soon as gameplay is complete.
-  - [x] **WebSocket** - Not sure yet
-  - [x] **application logic** - The game 
-- [x] **Router** - Routing between login and gameplay
-
-## Service deliverable
-
-- [x] **Node.js/Express HTTP service** - not sure yet
-- [x] **Static middleware for frontend** - not sure yet
-- [ ] **Calls to third party endpoints** - not sure yet
-- [x] **Backend service endpoints** - Placeholders for login that stores the current user on the server. 
-
-## DB/Login deliverable
-
-For this deliverable I associate the game inputs with the logged in user. 
-
-- [x] **MongoDB Atlas database created** - not sure yet
-- [x] **Stores data in MongoDB** - not sure yet
-- [x] **User registration** - Creates a new account in the database.
-- [x] **existing user** - Still am thinking of what to do with this
-- [x] **Use MongoDB to store credentials** - not sure yet
-- [ ] **Restricts functionality** - You cannot play the game until you log in
-
-## WebSocket deliverable
-
-For this deliverable I used webSocket to update the votes on the frontend in realtime.
-
-- [x] **Backend listens for WebSocket connection** - not sure yet
-- [x] **Frontend makes WebSocket connection** - not sure yet
-- [x] **Data sent over WebSocket connection** - not sure yet
-- [x] **WebSocket data displayed** - make sure gameplay is updated as soon as player takes turn
+### WebSocket (Optional)
+- **Single Player**: Since this is a single-player game, WebSocket will be used to display global leaderboard of all registered player's scores.
