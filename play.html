@@ -1,5 +1,5 @@
-<!DOCTYPE >
-<html lang="" en>
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <!-- ensures text is displayed correctly-->
@@ -24,7 +24,34 @@
       <!--adds line to separate header from main section-->
     </header>
     <main>
-        
+      <h1>5 Strikes and you're Out!</h1>
+      <div class="word" id="wordDisplay">
+        _ _ _ _ _
+      </div>
+
+      <div class="input-container">
+        <label for="guessInput">Guess a letter:</label>
+        <input type="text" id="guessInput" maxlength="1">
+        <button onclick="makeGuess()">Guess</button>
+      </div>
+
+      <div class="tally-container" id="tallyContainer">
+        <span class="strike">|</span>
+        <span class="strike">|</span>
+        <span class="strike">|</span>
+        <span class="strike">|</span>
+        <span class="strike" style="transform: rotate(45deg);">/</span>
+      </div>
+
+      <!--win or lose message-->
+      <div class="message" id="message"></div>
+
+      <!--scoreboard-->
+      <div class="scoreboard">
+        <h2>Global scoreboard</h2>
+        <p id="globalScore">Top Score:10</p>
+      </div>
+      </h1>
     </main>
   </body>
 </html>
