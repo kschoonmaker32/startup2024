@@ -31,10 +31,10 @@ Tired of the usual word-guessing games? **5 Strikes and You're Out** offers a fr
 - **Components**: React will be used to build modular components like the login screen, game interface, and tally mark display.
 - **Routing**: React Router will navigate between the login page, game page, and score page without reloading the browser.
 
-### Web Service
+### Web Service/3rd party
 - **Backend Services**: The backend will provide services that handle:
   - `login`: Authenticate users and manage their sessions.
-  - `getWord`: Retrieve a random word from a local wordlist stored on the server.
+  - `getWord`: Retrieve a random word from a 3rd party website to use as the word the user must guess.
   - `saveScore`: Store the player's score in the database at the end of each game.
 
 ### Authentication
@@ -44,5 +44,5 @@ Tired of the usual word-guessing games? **5 Strikes and You're Out** offers a fr
 - **Persistent Data**: Player scores will be stored in a MongoDB database, allowing them to track their progress and challenge themselves to improve.
 - **User Data**: Secure storage of user credentials and scores, allowing players to view their previous game data.
 
-### WebSocket (Optional)
-- **Single Player**: Since this is a single-player game, WebSocket will be used to display global leaderboard of all registered player's scores.
+### WebSocket
+- **Single Player**: Player scores will be updated in real time on the global leaderboard, and the leaderboard will be updated to show which player is in the lead.
