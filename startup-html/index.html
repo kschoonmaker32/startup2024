@@ -6,62 +6,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!--matches page dimensions to screen-->
     <title>5 Strikes HTML</title>
-
-    <link rel="stylesheet" href="main.css" />
-    <!-- Include bootstrap CSS framework -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
-      crossorigin="anonymous"
-    />
-
   </head>
-  <body class="bg-purple text-light">
-    <header class="container-fluid">
-      <nav class="navbar fixed-top navbar-light">
-        <a class="navbar-brand" href="#">5 Strikes</a>
-        <menu class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link active" href="index.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class ="nav-link active" href="play.html">Play</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="scoreboard.html">Scoreboard</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="about.html">About</a>
-          </li>
+  <body>
+    <header>
+      <h1>5 Strikes</h1>
+      <!--Navigation bar and elements here-->
+      <nav>
+        <menu>
+          <!--interaction instead of <ul>-->
+          <li><a href="index.html">Home</a></li>
+          <li><a href="play.html">Play</a></li>
+          <li><a href="scoreboard.html">Scoreboard</a></li>
+          <li><a href="about.html">About</a></li>
         </menu>
       </nav>
+      <hr />
       <!--adds line to separate header from main section-->
     </header>
 
-    <main class ="container-fluid bg-secondary text-center">
-      <div>
+    <!--add css here-->
+    <main>
       <h1>Login to play</h1>
       <form method="get" action="play.html">
-        <div class="input-group mb-3">
-          <span class="input-group-text">Username</span>
-          <input class="form-control" type="text" placeholder="username" />
+        <div>
+          <span>Username</span>
+          <input type="text" placeholder="username" />
         </div>
-        <div class="input-group mb-3">
-          <span class="input-group-text">Password</span>
-          <input class="form-control" type="text" placeholder="password" />
+        <div>
+          <span>Password</span>
+          <input type="text" placeholder="password" />
         </div>
-        <button type="submit" class="btn btn-primary">Login</button>
-        <button type="submit" class="btn btn-secondary">create</button>
+        <button type="submit">Login</button>
+        <button type="submit">create</button>
       </form>
-      </div>
     </main>
 
-    <footer class="bg-dark text-white-50">
-      <div class="container-fluid">
-        <span class="text-reset">Access Github page here: </span>
-        <span> <a class="text-reset" href="https://github.com/kschoonmaker32/startup2024">Github</a></span>
-      </div>
+    <footer>
+      <hr />
+      <span class="text-reset">Access Github page here: </span>
+      <span> <a href="https://github.com/kschoonmaker32/startup2024">Github</a></span>
+      <br />
     </footer>
   </body>
 </html>
