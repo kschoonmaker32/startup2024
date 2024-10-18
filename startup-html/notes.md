@@ -21,52 +21,99 @@ br
 body style="background-color:yellow;"
 
 **How do you define important text?**
+
 strong
+
 **How do you define emphasized text?**
+
 em
+
 **How to create a hyperlink?**
+
 <a href="http://www.w3schools.com">W3Schools</a>
+
 **How to open a link in a new browser/window?**
+
 a href="url" target="_blank"
+
 **Which of these are all table elements?**
+
 table, tr, td
+
 **Inline elements are usually displayed without starting a new line.**
+
 **How to make a checkbox?**
+
 input type="checkbox"
+
 **How to make text input field?**
+
 <input type="text"> 
+
 **How to make a dropdown list?**
+
 select
+
 **How to make a text area?**
+
 textarea
+
 **How to insert an image?**
+
 img src="image.gif" alt="MyImage"
+
 **How to insert background image?**
+
 body style="background-image:url(background.gif)"
+
 **An <iframe> is used to display a web page within a web page.**
+
 **Block elements are usually displayed starting a new line.**
+
 **What defines the title?**
+
 title
+
 **In HTML, you can embed SVG elements directly into an HTML page.**
+
 **What is the correct HTML element for playing video and audio files?**
+
 video, audio
+
 **The HTML global attribute, "contenteditable" is used to:**
+
 Specify if the content is editable or not.
+
 **In HTML, onblur and onfocus are:**
+
 Event attributes
+
 **Graphics defined by SVG is in which format?**
+
 XML
+
 **The HTML <canvas> element is used to:**
+
 Draw graphics
+
 **In HTML, which attribute is used to specify that an input field must be filled out?**
+
 Required
+
 **What input type defines a slider control?**
+
 Range
+
 **Which HTML element is used to display a scalar measurement within a range?**
+
 Meter
+
 **In HTML, what does the <aside> element define?**
+
 Content aside from the page content
+
 **Which HTML element is used to specify a header for a document or section?**
+
 Header
 
 
