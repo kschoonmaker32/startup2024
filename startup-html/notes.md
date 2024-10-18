@@ -19,7 +19,7 @@ em
 **How to create a hyperlink?**
 <a href="http://www.w3schools.com">W3Schools</a>
 **How to open a link in a new browser/window?**
-<a href="url" target="_blank">  
+a href="url" target="_blank"
 **Which of these are all table elements?**
 table, tr, td
 **Inline elements are usually displayed without starting a new line.**
