@@ -24,7 +24,8 @@ span: an inline span of content
 3. The final way to associate CSS is to use the HTML link element to create a hyperlink reference to an external file containing CSS rules. The link element must appear in the head element of the document. (preferred)
 <link rel="stylesheet" href="styles.css" />
 
-##Midterm Study Guide
+
+## Midterm Study Guide
 
 **By default, the HTML span element has a default CSS display property value of:**
 
