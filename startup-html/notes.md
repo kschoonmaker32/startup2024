@@ -5,13 +5,21 @@ span: an inline span of content
 ## HTML notes and example questions
 
 **Who is making the web standards?**
+
 The World Wide Web Consortium
+
 **Choose the correct HTML element for the largest heading.**
+
 h1
+
 **How do you ine break in HTML?**
+
 br
+
 **How do you add a background color in HTML?**
+
 body style="background-color:yellow;"
+
 **How do you define important text?**
 strong
 **How do you define emphasized text?**
