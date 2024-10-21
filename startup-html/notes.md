@@ -142,7 +142,7 @@ body {color: black;}
 
 background-color
 
-**How do you add a background color for all <h1> elements?**
+**How do you add a background color for all h1 elements?**
 
 h1 {background-color:#FFFFFF;}  
 
