@@ -320,7 +320,7 @@ div {
 
 **In the CSS box model, what is the ordering of the box layers starting at the inside and working out?**
 
-1. Auto x auto
+1. Content
 2. Padding
 3. Border
 4. Margin 
