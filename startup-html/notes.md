@@ -214,6 +214,70 @@ Separate each selector with a comma
 static
 
 
+## Javascript notes and example questions
+
+**Inside which HTML element do we put the JavaScript?**
+
+script
+
+**What is the correct JavaScript syntax to change the content of the HTML element below?**
+**p id="demo">This is a demonstration.</p**
+
+document.getElementById("demo").innerHTML = "Hello World!";  
+
+**Where is the correct place to insert a JavaScript?**
+
+head and body
+
+**What is the correct syntax for referring to an external script called "xxx.js"?**
+
+script src="xxx.js"
+
+**The external JavaScript file does not need to contain the <script> tag.**
+
+**How do you write "Hello World" in an alert box?**
+
+alert("Hello World");  
+
+**How do you create and call a function in Javascript?**
+
+function myFunction()
+
+myFunction()
+
+**What is the correct way to write a JavaScript array?**
+
+var colors = ["red", "green", "blue"]  
+
+**How do you round the number 7.25, to the nearest integer?**
+
+Math.round(7.25)  
+
+**How do you find the number with the highest value of x and y?**
+
+Math.max(x,y)
+
+**What is the correct JavaScript syntax for opening a new window called "w2"?**
+
+w2 = window.open("http://www.w3schools.com");  
+
+**How can you detect the client's browser name?**
+
+navigator.appName  
+
+**Which event occurs when the user clicks on an HTML element?**
+
+onclick
+
+**How do you declare a JavaScript variable?**
+
+var carName;
+
+**Javascript IS case sensitive.**
+
+
+
+
 
 
 **Associating CSS with HTML**
