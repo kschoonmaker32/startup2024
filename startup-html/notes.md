@@ -116,6 +116,104 @@ Content aside from the page content
 
 Header
 
+## CSS notes and example questions
+
+**What is the correct HTML for referring to an external style sheet?**
+
+link rel="stylesheet" type="text/css" href="mystyle.css"
+
+**Where in an HTML document is the correct place to refer to an external style sheet?**
+
+head
+
+**Which HTML tag is used to define an internal style sheet?**
+
+style
+
+**Which HTML attribute is used to define inline styles?**
+
+style
+
+**Which is the correct CSS syntax?**
+
+body {color: black;}  
+
+**Which property is used to change the background color?**
+
+background-color
+
+**How do you add a background color for all <h1> elements?**
+
+h1 {background-color:#FFFFFF;}  
+
+**Which CSS property is used to change the text color of an element?**
+
+color
+
+**Which CSS property controls the text size?**
+
+font-size
+
+**What is the correct CSS syntax for making all the <p> elements bold?**
+
+p {font-weight:bold;}  
+
+**How do you display hyperlinks without an underline?**
+
+a {text-decoration:none;}  
+
+**How do you make each word in a text start with a capital letter?**
+
+text-transform:capitalize 
+
+**Which property is used to change the font of an element?**
+
+font-family
+
+**How do you make the text bold?**
+
+font-weight:bold;
+
+**How do you display a border like this:**
+
+**The top border = 10 pixels**
+**The bottom border = 5 pixels**
+**The left border = 20 pixels**
+**The right border = 1pixel?**
+
+border-width:10px 1px 5px 20px; 
+
+**Which property is used to change the left margin of an element?**
+
+margin-left 
+
+**When using the padding property; you are not allowed to use negative values.**
+
+**How do you make a list that lists its items with squares?**
+
+list-style-type: square;
+
+**How do you select an element with id 'demo'?**
+
+#demo
+
+**How do you select elements with class name 'test'?**
+
+.test
+
+**How do you select all p elements inside a div element?**
+
+div p
+
+**How do you group selectors?**
+
+Separate each selector with a comma  
+
+**What is the default value of the position property?**
+
+static
+
+
 
 
 **Associating CSS with HTML**
