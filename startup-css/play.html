@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- ensures text is displayed correctly-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--matches page dimensions to screen-->
+    <title>5 Strikes</title>
+
+    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="play.css" />
+
+    <!-- include css bootstrap framework here! -->
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+    crossorigin="anonymous"
+  />
+
+  </head>
+  <body class="bg-light text-light">
+    <header class="container-fluid">
+      <!--<h1>5 Strikes</h1>-->
+      <!--Navigation bar and elements here-->
+      <nav class="navbar fixed-top navbar-light">
+        <a class="navbar-brand" href="#">5 Strikes</a>
+        <menu>
+          <!--interaction instead of <ul>-->
+          <li><a href="index.html">Home</a></li>
+          <li><a href="play.html">Play</a></li>
+          <li><a href="scoreboard.html">Scoreboard</a></li>
+          <li><a href="about.html">About</a></li>
+        </menu>
+      </nav>
+      <hr />
+      <!--adds line to separate header from main section-->
+    </header>
+    <main>
+      <!--add javascript here to manage gameplay-->
+      <h1>5 Strikes and you're Out!</h1>
+      <div class="word" id="wordDisplay">
+        _ _ _ _ _
+      </div>
+
+      <div class="input-container">
+        <label for="guessInput">Guess a letter:</label>
+        <input type="text" id="guessInput" maxlength="1">
+        <button onclick="makeGuess()">Guess</button>
+      </div>
+
+      <div class="tally-container" id="tallyContainer">
+        <span class="strike">|</span>
+        <span class="strike">|</span>
+        <span class="strike">|</span>
+        <span class="strike">|</span>
+        <span class="strike" style="transform: rotate(45deg);">/</span>
+      </div>
+
+      <!--win or lose message-->
+      <div class="message" id="message"></div>
+
+      <!--scoreboard-->
+      <div class="scoreboard">
+        <h2>Global scoreboard</h2>
+        <p id="globalScore">Top Score:10</p>
+      </div>
+      </h1>
+    </main>
+  </body>
+</html>
