@@ -2,15 +2,27 @@
   font-size: 5em;
 }
 
-.strike {
-  font-size: 10em;
+.tally-container {
+  position: relative; 
+  display: inline-block;
+  /*border: 10px solid black;*/
 }
 
-.tally {
-  width: 2px; /* Thickness of the vertical lines */
-  height: 100px; /* Height of the tally marks */
-  background-color: black;
+.strike {
+  font-size: 175px;
+  /*display: inline-block;*/
+  margin-right: 10px;
+  width: 2px;
+  height: 100px;
+  border: 1px black;
+}
+
+.strike-fifth {
   position: absolute;
-  top: 0;
+  transform-origin: top left;
+  top: 4px;
+  left: 315px;
+  transform: rotate(60deg) scaleY(1.75);
+  font-size: 175px;
 }
 
