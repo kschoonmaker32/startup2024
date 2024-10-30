@@ -17,7 +17,7 @@ header {
 }
 
 main {
-  padding-top: 100px;
+  padding-top: 200px;
   flex: 1 calc(100vh - 110px);
   display: flex;
   flex-direction: column;
@@ -66,7 +66,7 @@ menu {
 
 .navbar-brand {
   padding-left: 0.3em;
-  border-bottom: solid rgb(182, 182, 182) thin;
+  border-bottom: solid white thin;
 }
 
 menu .nav-item {

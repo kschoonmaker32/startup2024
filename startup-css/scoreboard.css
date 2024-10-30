@@ -1,1 +1,26 @@
+table {
+  max-width: 40vw;
+  background-color: #c4a8e6;
+  color: white; 
+  text-align: center; 
+  border: 2px solid white;
+}
+
+table thead th {
+  font-weight: bold;
+  color: white;
+  background-color: #c4a8e6;
+  border: 2px solid white;
+}
+
+table tbody td {
+  color: white;
+  background-color: #c4a8e6;
+  border: 2px solid white;
+}
+
+table tbody td + td, table thead th + th {
+  border-left: 2px solid white; 
+}
+
 
