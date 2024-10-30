@@ -17,11 +17,35 @@ header {
 }
 
 main {
+  padding-top: 100px;
   flex: 1 calc(100vh - 110px);
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  /*justify-content: space-around;*/
+  position: relative;
+}
+
+.bottom-elements {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: left;
+  padding-bottom: 20px; 
+}
+
+mini {
+  display: flex;
+  color: white;
+  font-size: xx-small;
+  background-color: #c4a8e6;
+  align-items: left;
+}
+
+picture {
+  display: flex;
+  align-items: left;
+  background-color: #c4a8e6;
 }
 
 
