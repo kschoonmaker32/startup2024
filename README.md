@@ -5,7 +5,9 @@ Tired of the usual word-guessing games? **5 Strikes and You're Out** offers a fr
 
 ## Design
 ![homepage](https://github.com/user-attachments/assets/14978670-3b62-45b4-a971-e194c17e692a)
-
+![play](https://github.com/user-attachments/assets/653d341c-7fa7-4fe4-8e1a-652fd874f418)
+![scoreboard](https://github.com/user-attachments/assets/c3c1c4d0-63c1-4a9e-b9e4-8a8b201ddd1d)
+![about](https://github.com/user-attachments/assets/cd5bd1be-8fe8-4926-9545-cf3300b27caf)
 
 ## Key Features
 - Secure login and high score tracking to challenge yourself and improve over time. 
