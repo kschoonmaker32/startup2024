@@ -4,8 +4,8 @@
 Tired of the usual word-guessing games? **5 Strikes and You're Out** offers a fresh twist! In this single-player game, you guess letters to reveal a hidden word, but you only get five incorrect guesses before you're out. Tally marks appear for each wrong guess—five strikes and the game is over. Track your scores and aim to beat your previous best!
 
 ## Design
-https://github.com/kschoonmaker32/startup2024/blob/main/homepage.jpg?raw=true
-https://github.com/kschoonmaker32/startup2024/blob/main/play.jpg?raw=true
+[](https://github.com/kschoonmaker32/startup2024/blob/main/homepage.jpg?raw=true)
+[](https://github.com/kschoonmaker32/startup2024/blob/main/play.jpg?raw=true)
 https://github.com/kschoonmaker32/startup2024/blob/main/scoreboard.jpg?raw=true
 https://github.com/kschoonmaker32/startup2024/blob/main/about.jpg?raw=true
 
