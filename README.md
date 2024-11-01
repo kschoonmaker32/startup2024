@@ -22,8 +22,10 @@ Tired of the usual word-guessing games? **5 Strikes and You're Out** offers a fr
 - **Pages**: The application will have a login page, game page, a scoreboard page, and an about page. Players can log in, play the game, and view their scores. They will receive one point for each correctly guess word. 
 
 ### CSS
-- **Styling**: CSS will handle the design and layout of the game, including the buttons, word display, and the tally marks. 
-- **Animations**: CSS will be used to animate tally marks as they are drawn with each incorrect guess, providing visual feedback for the player.
+- **Styling**: I implemented the CSS code to display all of the styling of the website such as the theme, the layout, and the visual elements to create a visually engaging setup for users to look at.
+- **Theme**: I made the theme of the website purple and white to make it stand out from other websites but also keep users engaged with bright colors.
+- **Layout**: The layout is designed so the text and website content is centered in the middle of each webpage. This adds a professional appeal to the site as well as making it look neat.
+- **Visual Elements**: Despite the tally marks being the most time consuming and confusing part of the implementation so far, they add a unique visual element that communicates the player's progress and adds to the interactive experience. The buttons were also designed to be engaging and fun for players to use during login and gameplay.
 
 ### JavaScript
 - **Interactivity**: JavaScript will manage the game logic, including checking guesses, revealing letters in the word, and updating the tally marks when incorrect guesses are made.
