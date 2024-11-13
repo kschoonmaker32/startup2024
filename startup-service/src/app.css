@@ -1,0 +1,106 @@
+.body {
+  display: flex;
+  flex-direction: column;
+  min-width: 375px;
+}
+
+.bg-light {
+  background-color: white;
+}
+
+.bg-purple {
+  background-color: #c4a8e6;
+}
+
+header {
+  flex: 0 80px;
+}
+
+main {
+  padding-top: 200px;
+  flex: 1 calc(100vh - 110px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /*justify-content: space-around;*/
+  position: relative;
+}
+
+.bottom-elements {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: left;
+  padding-bottom: 20px; 
+}
+
+mini {
+  display: flex;
+  color: white;
+  font-size: xx-small;
+  background-color: #c4a8e6;
+  align-items: left;
+}
+
+picture {
+  display: flex;
+  align-items: left;
+  background-color: #c4a8e6;
+}
+
+
+footer b {
+  flex: 0 30px;
+  font-weight: bold;
+  background-color: white;
+  color: #c4a8e6;
+}
+
+menu {
+  flex: 1;
+  display: flex;
+  /*  overwrite Bootstrap so the menu does not wrap */
+  flex-direction: row !important;
+  list-style: none;
+}
+
+.navbar-brand {
+  padding-left: 0.3em;
+  border-bottom: solid white thin;
+}
+
+menu .nav-item {
+  padding: 0 0.3em;
+}
+
+button.btn {
+  background-color: #8a47d6;
+  border: #8a47d6;
+  color: white
+}
+
+button.btn:hover {
+  background-color: #eddeff;
+  border: #eddeff;
+  color: white;
+}
+
+footer a {
+  color: #c4a8e6;
+}
+
+footer a:hover {
+  color: #8a47d6;
+}
+
+@media (max-height: 600px) {
+  header {
+    display: none;
+  }
+  footer {
+    display: none;
+  }
+  main {
+    flex: 1 100vh;
+  }
+}
