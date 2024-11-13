@@ -1,0 +1,17 @@
+{
+  "name": "startup2024",
+  "version": "1.0.0",
+  "description": "## Elevator Pitch Tired of the usual word-guessing games? **5 Strikes and You're Out** offers a fresh twist! In this single-player game, you guess letters to reveal a hidden word, but you only get five incorrect guesses before you're out. Tally marks appear for each wrong guess—five strikes and the game is over. Track your scores and aim to beat your previous best!",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "vite": "^5.4.10"
+  }
+}
