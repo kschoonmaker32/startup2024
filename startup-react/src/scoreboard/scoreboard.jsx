@@ -1,4 +1,6 @@
 import React from 'react';
+import './scoreboard.css';
+
 
 export function Scoreboard() {
   return (
