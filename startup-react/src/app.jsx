@@ -1,9 +1,15 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './app.css';
+import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom';
+import { Login } from './login/login';
+import { Play } from './play/play';
+import { Scoreboard } from './scoreboard/scoreboard';
+import { About } from './about/about';
 
 export default function App() {
   return (
+    <BrowserRouter>
     <div className='body bg-purple text-light'>
       <header className='container-fluid'>
         <nav className='navbar fixed-top navbar-dark'>
@@ -12,30 +18,36 @@ export default function App() {
           </div>
           <menu className='navbar-nav'>
             <li className='nav-item'>
-              <a className='nav-link' href='index.html'>
+              <NavLink className='nav-link' to=''>
                 Home
-              </a>
+              </NavLink>
             </li>
             <li className='nav-item'>
-              <a className='nav-link' href='play.html'>
+              <NavLink className='nav-link' to='play'>
                 Play
-              </a>
+              </NavLink>
             </li>
             <li className='nav-item'>
-              <a className='nav-link' href='scoreboard.html'>
+              <NavLink className='nav-link' to='scoreboard'>
                 Scoreboard
-              </a>
+              </NavLink>
             </li>
             <li className='nav-item'>
-              <a className='nav-link' href='about.html'>
+              <NavLink className='nav-link' to='About'>
                 About
-              </a>
+              </NavLink>
             </li>
           </menu>
         </nav>
       </header>
 
-      <main>App components go here</main>
+    <Routes>
+      <Route path='/' element={<Login />} exact />
+      <Route path='/play' element={<Play />} />
+      <Route path='/scoreboard' element={<Scoreboard />} />
+      <Route path='/about' element={<About />} />
+      <Route path='*' element={<NotFound />} />
+    </Routes>
 
       <footer className="footer bg-light">
       <div className="container-fluid">
@@ -44,5 +56,10 @@ export default function App() {
       </div>
     </footer>
   </div>
+  </BrowserRouter>
   );
+}
+
+function NotFound() {
+  return <main className='container-fluid bg-purple text-center'>404: Return to sender. Address unknown.</main>;
 }
