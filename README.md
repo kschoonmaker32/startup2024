@@ -33,8 +33,8 @@ Tired of the usual word-guessing games? **5 Strikes and You're Out** offers a fr
 - **Score Tracking**: JavaScript will handle score calculation and display the player's score at the end of the game.
 
 ### React
-- **Components**: React will be used to build modular components like the login screen, game interface, and tally mark display.
-- **Routing**: React Router will navigate between the login page, game page, and score page without reloading the browser.
+- **Components**: The application is modular, with reusable and well-structured components for streamlined development and maintainability. Components handle tasks like displaying data and visual elements with clear css.
+- **Routing**: React Router now navigates between the login page, game page, and score page without reloading the browser providing smooth transitions.
 
 ### Web Service/3rd party
 - **Backend Services**: The backend will provide services that handle:
