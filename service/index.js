@@ -13,3 +13,6 @@ app.listen(port, () => {
 });
 
 app.use(express.json());
+
+let users = {};
+let scores = [];
