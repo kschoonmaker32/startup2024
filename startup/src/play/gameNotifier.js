@@ -1,64 +1,40 @@
-const GameEvent = {
-  System: 'system',
-  Start: 'gameStart',
-  End: 'gameEnd',
-  Guess: 'guess',
+export const GameEvent = {
+  Start: 'start',
+  End: 'end',
 };
 
-class EventMessage {
-  constructor(from, type, value) {
-    this.from = from;
-    this.type = type;
-    this.value = value;
-  }
-}
+export class GameEventNotifier {
+  static ws = null;
 
-class GameEventNotifier {
-  events = [];
-  handlers = [];
+  static initializeWebSocket() {
+    if (!this.ws || this.ws.readyState === WebSocket.CLOSED) {
+      this.ws = new WebSocket('ws://localhost:4000/ws');
 
-  constructor() {
-    let port = window.location.port;
-    const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
-    this.socket = new WebSocket(`${protocol}://${window.location.hostname}:${port}/ws`);
-    this.socket.onopen = (event) => {
-      this.receiveEvent(new EventMessage('5 Strikes', GameEvent.System, { msg: 'connected' }));
-    };
-    this.socket.onclose = (event) => {
-      this.receiveEvent(new EventMessage('5 Strikes', GameEvent.System, { msg: 'disconnected' }));
-    };
-    this.socket.onmessage = async (msg) => {
-      try {
-        const event = JSON.parse(await msg.data.text());
-        this.receiveEvent(event);
-      } catch {}
-    };
-  }
+      this.ws.onopen = () => {
+        console.log('WebSocket connection established.');
+      };
 
-  broadcastEvent(from, type, value) {
-    const event = new EventMessage(from, type, value);
-    if (this.socket.readyState === WebSocket.OPEN) {
-      this.socket.send(JSON.stringify(event));
-    } else {
-      console.warn('WebSocket not open. Event not sent:', event);
+      this.ws.onerror = (error) => {
+        console.error('WebSocket error:', error);
+      };
+
+      this.ws.onclose = () => {
+        console.log('WebSocket connection closed. Retrying...');
+        setTimeout(() => this.initializeWebSocket(), 1000);
+      };
     }
   }
 
-  addHandler(handler) {
-    this.handlers.push(handler);
-  }
-
-  removeHandler(handler) {
-    this.handlers = this.handlers.filter((h) => h !== handler);
-  }
-
-  receiveEvent(event) {
-    this.events.push(event);
-    this.handlers.forEach((handler) => {
-      handler(event);
-    });
+  static broadcastEvent(userName, event, data) {
+    if (this.ws && this.ws.readyState === WebSocket.OPEN) {
+      const payload = JSON.stringify({ userName, event, data });
+      this.ws.send(payload);
+      console.log(payload);
+    } else {
+      console.warn('WebSocket is not open. Event not sent:', event);
+    }
   }
 }
 
-const GameNotifier = new GameEventNotifier();
-export { GameEvent, GameNotifier };
+// Initialize WebSocket connection when the module is imported
+GameEventNotifier.initializeWebSocket();
