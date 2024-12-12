@@ -54,7 +54,6 @@ class GameEventNotifier {
 
   receiveEvent(event) {
     this.events.push(event);
-
     this.handlers.forEach((handler) => {
       handler(event);
     });
