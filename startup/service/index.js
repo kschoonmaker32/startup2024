@@ -103,7 +103,7 @@ app.use((_req, res) => {
 // setAuthCookie in the HTTP response
 function setAuthCookie(res, authToken) {
   res.cookie(authCookieName, authToken, {
-    //secure: true,
+    secure: true,
     httpOnly: true,
     sameSite: 'strict',
   });
@@ -112,3 +112,5 @@ function setAuthCookie(res, authToken) {
 const httpService = app.listen(port, () => {
   console.log(`Listening on port ${port}`);
 });
+
+peerProxy(httpService);
