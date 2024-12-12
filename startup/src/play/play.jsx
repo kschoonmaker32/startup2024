@@ -1,6 +1,6 @@
 import React from 'react';
 import './play.css';
-import { GameEventNotifier, GameEvent } from './gameNotifier';
+import { GameNotifier, GameEvent } from './gameNotifier';
 
 export function Play(props) {
   const userName = props.userName;
@@ -14,7 +14,7 @@ export function Play(props) {
   // Initialize the game
   React.useEffect(() => {
     resetGame();
-    GameEventNotifier.initializeWebSocket();
+    GameNotifier.initializeWebSocket();
     console.log("game started");
   }, []);
 
@@ -28,7 +28,7 @@ export function Play(props) {
     setMessage("");
 
     // Notify other players a new game has started
-    GameEventNotifier.broadcastEvent(userName, GameEvent.Start, {});
+    GameNotifier.broadcastEvent(userName, GameEvent.Start, {});
   };
 
   const handleGuess = async (guess) => {
@@ -76,7 +76,7 @@ export function Play(props) {
     });
 
     // Notify others the game has ended
-    GameEventNotifier.broadcastEvent(userName, GameEvent.End, newScore);
+    GameNotifier.broadcastEvent(userName, GameEvent.End, newScore);
     console.log("game ended");
   };
 
