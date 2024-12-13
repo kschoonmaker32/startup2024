@@ -28,6 +28,7 @@ export function Play(props) {
     setMessage("");
 
     // Notify other players a new game has started
+    console.log("new game has started:");
     GameEventNotifier.broadcastEvent(userName, GameEvent.Start, {});
   };
 

@@ -19,11 +19,15 @@ export class GameEventNotifier {
       };
 
       this.ws.onmessage = (message) => {
+        console.log("Raw WebSocket message:", message);
         try {
+          console.log("In try block line 23");
           const event = JSON.parse(message.data);
+          console.log("WebSocket message received:", event);
           this.notifyHandlers(event); // Notify all registered handlers
         } catch (error) {
           console.error('Error parsing WebSocket message:', error);
+          console.error('Raw message data:', message.data);
         }
       };
     }
@@ -42,12 +46,16 @@ export class GameEventNotifier {
   }
 
   static notifyHandlers(event) {
+    console.log('Notifying handlers with event:', event);
     this.handlers.forEach((handler) => handler(event));
   }
 
   static broadcastEvent(userName, event, data) {
+    console.log("in broadcastevent");
     if (this.ws && this.ws.readyState === WebSocket.OPEN) {
+      console.log("in event and ws is open:");
       const payload = JSON.stringify({ userName, event, data });
+      console.log("Broadcasting payload:", payload);
       this.ws.send(payload);
     } else {
       console.warn('WebSocket is not open. Event not sent:', event);

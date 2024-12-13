@@ -8,6 +8,7 @@ export function Players(props) {
   // Subscribe to GameEventNotifier
   React.useEffect(() => {
     const handleGameEvent = (event) => {
+      console.log("Handling game event in Players:", event);
       setEvents((prevEvents) => [...prevEvents, event]); // Update events list
     };
 
@@ -23,12 +24,14 @@ export function Players(props) {
 
   // Create an array of message components to render
   function createMessageArray() {
+    console.log("rendering events");
     return events.map((event, i) => {
       let message = 'unknown';
       if (event.event === GameEvent.End) {
         message = `scored ${event.data.score}`;
       } else if (event.event === GameEvent.Start) {
         message = `started a new game`;
+        console.log("new game started");
       } else if (event.event === GameEvent.System) {
         message = event.data.msg;
       }
