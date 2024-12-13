@@ -38,16 +38,12 @@ Tired of the usual word-guessing games? **5 Strikes and You're Out** offers a fr
 
 ### Web Service/3rd party
 - **Backend Services**: The backend will provide services that handle:
-  - `login`: Authenticate users and manage their sessions.
-  - `getWord`: Retrieve a random word from a 3rd party website to use as the word the user must guess.
-  - `saveScore`: Store the player's score in the database at the end of each game.
-
+  - `about': the game will grab a random photo from a 3rd party api and display it on the about page.
 ### Authentication
-- **User Login**: Players will need to log in to track their scores and view their game history. The player's profile will be displayed on the game page once logged in.
+- **User Login**: Website allows and prompts users to login to play the game, however they have the option to play it without logging in as well.
 
 ### Database Data
-- **Persistent Data**: Player scores will be stored in a MongoDB database, allowing them to track their progress and challenge themselves to improve.
-- **User Data**: Secure storage of user credentials and scores, allowing players to view their previous game data.
+- **Persistent Data**: Player credentials will be stored in the database allowing for easy authentication.
 
 ### WebSocket
-- **Single Player**: Player scores will be updated in real time on the global leaderboard, and the leaderboard will be updated to show which player is in the lead.
+- **Single Player**: Players are notified when a new game is started by websocket embedded in backend of website.
