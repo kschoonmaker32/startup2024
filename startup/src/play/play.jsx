@@ -17,7 +17,7 @@ export function Play(props) {
     resetGame();
   }, []);
 
-  const resetGame = () => {
+  async function resetGame() {
     const words = ["apple", "grape", "flame", "brick", "plane"];
     const newWord = words[Math.floor(Math.random() * words.length)];
     setWord(newWord);
@@ -65,7 +65,7 @@ export function Play(props) {
     }
   };
 
-  const saveScore = async (score) => {
+  async function saveScore(score) {
     const date = new Date().toLocaleDateString();
     const newScore = { name: userName, score: score, date: date };
 
