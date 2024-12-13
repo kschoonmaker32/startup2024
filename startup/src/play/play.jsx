@@ -1,6 +1,6 @@
 import React from 'react';
 import './play.css';
-import { GameNotifier, GameEvent } from './gameNotifier';
+import { GameEventNotifier, GameEvent } from './gameNotifier';
 
 export function Play(props) {
   const userName = props.userName;
@@ -14,7 +14,7 @@ export function Play(props) {
   // Initialize the game
   React.useEffect(() => {
     resetGame();
-    GameNotifier.initializeWebSocket();
+    GameEventNotifier.initializeWebSocket();
     console.log("game started");
   }, []);
 
@@ -28,7 +28,7 @@ export function Play(props) {
     setMessage("");
 
     // Notify other players a new game has started
-    GameNotifier.broadcastEvent(userName, GameEvent.Start, {});
+    GameEventNotifier.broadcastEvent(userName, GameEvent.Start, {});
   };
 
   const handleGuess = async (guess) => {
@@ -47,6 +47,9 @@ export function Play(props) {
       );
       setDisplayedWord(updatedWord);
 
+      // Notify other players of a correct guess
+      GameNotifier.broadcastEvent(userName, GameEvent.Guess, { guess, correct: true });
+
       if (!updatedWord.includes("_")) {
         setMessage("You win! 🎉");
         await saveScore(newGuessedLetters.length);
@@ -56,6 +59,9 @@ export function Play(props) {
       setMessage("Incorrect guess!");
       const newStrikes = strikes + 1;
       setStrikes(newStrikes);
+
+      // Notify other players of an incorrect guess
+      GameNotifier.broadcastEvent(userName, GameEvent.Guess, { guess, correct: false });
 
       if (newStrikes >= maxStrikes) {
         setMessage(`You lose! The word was "${word}".`);
@@ -76,7 +82,7 @@ export function Play(props) {
     });
 
     // Notify others the game has ended
-    GameNotifier.broadcastEvent(userName, GameEvent.End, newScore);
+    GameEventNotifier.broadcastEvent(userName, GameEvent.End, newScore);
     console.log("game ended");
   };
 
@@ -92,6 +98,16 @@ export function Play(props) {
 
     handleGuess(guess);
     guessInput.value = "";
+  };
+
+  const handleGameEvent = (event) => {
+    if (event.type === GameEvent.Guess) {
+      console.log(`Player guessed: ${event.value.guess} (Correct: ${event.value.correct})`);
+    } else if (event.type === GameEvent.Start) {
+      console.log("A new game has started.");
+    } else if (event.type === GameEvent.End) {
+      console.log("Game ended. Final score:", event.value.score);
+    }
   };
 
   return (
@@ -110,11 +126,14 @@ export function Play(props) {
       </div>
 
       <div className="tally-container">
-        <span className={`strike ${strikes > 0 ? "active" : ""}`}>|</span>
-        <span className={`strike ${strikes > 1 ? "active" : ""}`}>|</span>
-        <span className={`strike ${strikes > 2 ? "active" : ""}`}>|</span>
-        <span className={`strike ${strikes > 3 ? "active" : ""}`}>|</span>
-        <span className={`strike-fifth ${strikes > 4 ? "active" : ""}`}>|</span>
+        {[...Array(maxStrikes)].map((_, index) => (
+          <span
+            key={index}
+            className={`strike ${strikes > index ? "active" : ""}`}
+          >
+            |
+          </span>
+        ))}
       </div>
 
       <div className="message" id="message">{message}</div>

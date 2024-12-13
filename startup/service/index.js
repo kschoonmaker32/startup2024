@@ -113,5 +113,4 @@ const httpService = app.listen(port, () => {
   console.log(`Listening on port ${port}`);
 });
 
-
 peerProxy(httpService);
