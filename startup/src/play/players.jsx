@@ -1,55 +1,51 @@
 import React from 'react';
-import { GameEvent, GameEventNotifier } from './gameNotifier'; // Use your updated GameNotifier
+
+import { GameEvent, GameNotifier } from './gameNotifier';
 
 export function Players(props) {
-  const userName = props.userName; // Pass userName from props
-  const [events, setEvents] = React.useState([]); // State to track events
+  const userName = props.userName;
 
-  // Subscribe to GameEventNotifier
+  const [events, setEvent] = React.useState([]);
+
   React.useEffect(() => {
-    const handleGameEvent = (event) => {
-      console.log("Handling game event in Players:", event);
-      setEvents((prevEvents) => [...prevEvents, event]); // Update events list
-    };
-
-    GameEventNotifier.addHandler(handleGameEvent);
-
-    console.log('GameEventNotifier:', GameEventNotifier);
-    console.log('GameEventNotifier.addHandler:', GameEventNotifier.addHandler);
+    GameNotifier.addHandler(handleGameEvent);
 
     return () => {
-      GameEventNotifier.removeHandler(handleGameEvent); // Clean up on unmount
+      GameNotifier.removeHandler(handleGameEvent);
     };
-  }, []);
+  });
 
-  // Create an array of message components to render
-  function createMessageArray() {
-    console.log("rendering events");
-    return events.map((event, i) => {
-      let message = 'unknown';
-      if (event.event === GameEvent.End) {
-        message = `scored ${event.data.score}`;
-      } else if (event.event === GameEvent.Start) {
-        message = `started a new game`;
-        console.log("new game started");
-      } else if (event.event === GameEvent.System) {
-        message = event.data.msg;
-      }
-
-      return (
-        <div key={i} className="event">
-          <span className="player-event">{event.userName}</span> {message}
-        </div>
-      );
-    });
+  function handleGameEvent(event) {
+    setEvent([...events, event]);
   }
 
-  // Render the Players component
+  function createMessageArray() {
+    const messageArray = [];
+    for (const [i, event] of events.entries()) {
+      let message = 'unknown';
+      if (event.type === GameEvent.End) {
+        message = `scored ${event.value.score}`;
+      } else if (event.type === GameEvent.Start) {
+        message = `started a new game`;
+      } else if (event.type === GameEvent.System) {
+        message = event.value.msg;
+      }
+
+      messageArray.push(
+        <div key={i} className='event'>
+          <span className={'player-event'}>{event.from.split('@')[0]}</span>
+          {message}
+        </div>
+      );
+    }
+    return messageArray;
+  }
+
   return (
-    <div className="players">
-      <h2>Player Updates</h2>
-      <span className="player-name">Player: {userName}</span>
-      <div id="player-messages">{createMessageArray()}</div>
+    <div className='players'>
+      Player
+      <span className='player-name'>{userName}</span>
+      <div id='player-messages'>{createMessageArray()}</div>
     </div>
   );
 }
