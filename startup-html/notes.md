@@ -449,4 +449,99 @@ Only IP address
   
   - 443: reserved for https (secure web traffic) 
   - 80: reserved for http (non secure web traffic) 
-  - 22: reserved for ssh (secure shell and remote login) 
+  - 22: reserved for ssh (secure shell and remote login)
+
+
+**Final Exam Review**
+
+**What is the default port for HTTP/HTTPS/SSH?**  
+
+80, 443, 22
+
+**What does an HTTP status code in the range of 300/400/500 indicate?**  
+
+- 300: further action required by client
+- 400: error on client side
+- 500: error on server side
+
+**What does the HTTP header content-type allow you to do?** 
+
+Allows the client and server to understand how to interpret content and ensure its rendered correctly
+
+**What does a “Secure cookie”/”Http-only cookie”/”Same-site cookie” do?**  
+[MDN Reference](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies)  
+
+- **Secure cookie**: ensure cookie is only sent over secure https connections
+- **http only cookie**: makes cookie inaccessible to javascript on client side
+- **same-site cookie**: controls if a cookie is sent with offsite requests
+
+**Assuming the following Express middleware, what would be the console.log output for an HTTP GET request with a URL path of /api/document?**  
+
+**Given the following Express service code: What does the following front end JavaScript that performs a fetch return?**  
+
+**Given the following MongoDB query, select all of the matching documents `{name:Mark}`**  
+
+**How should user passwords be stored?**
+
+hashed and salted for encryption
+
+**Assuming the following node.js websocket code in the back end, and the following front end websocket code, what will the front end log to the console?**  
+
+**What is the websocket protocol intended to provide?**  
+
+Real time communication between the client and the server 
+
+**What do the following acronyms stand for?**  
+
+- **JSX**: javascript xml (extendable markup language)
+- **JS**: javascript
+- **AWS**: amazon web services 
+- **NPM**: node package manager
+- **NVM**: node version manager
+
+**Assuming an HTML document with a body element. What text content will the following React component generate? The React component will use parameters.**  
+  
+
+**Given a set of React components that include each other, what will be generated?**  
+
+
+**What does a React component with React.useState do?**  
+
+Manages state variables by updating and tracking dynamic values
+
+**What are React Hooks used for?**  
+
+They add state and side effects to functional components (useState and useEffect)
+
+**What does the State Hook/Context Hook/Ref Hook/Effect Hook/Performance Hook do?**  
+[React Reference](https://react.dev/reference/react/hooks)  
+
+- **State**: manages state component by tracking and updating values
+- **Context**: accesses context values without needing to pass props down
+- **Ref**: creates a reference to store data that interacts with dom
+- **Effect**: handles side effects such as fetching data, updating dom, or subscribing/unsubscribing to events
+- **Performance**: optimizes performance by memoizing programs to increase program efficientcy
+
+**Given React Router code, select statements that are true.**  
+
+**What does the package.json file do?**  
+
+It defines a node project's scripts, dependencies, and configuration.
+
+**What does the fetch function do?**  
+
+It performs HTTP requests in javascript allowing the client and server to send and retrieve data and returns a promise. 
+
+**What does node.js do?**  
+
+Allows for backend development by running javascript on the server side.
+
+**What does pm2 do?**  
+
+It is a process manager for node.js applications by monitering processes and restarting if they crash. 
+
+**What does Vite do?**
+
+It is a fast build tool and development server for web projects. 
+
+
